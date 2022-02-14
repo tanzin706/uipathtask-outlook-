@@ -1,6 +1,6 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="705.333333333333,2542" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:moio="clr-namespace:Microsoft.Office.Interop.Outlook;assembly=Microsoft.Office.Interop.Outlook" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="705.333333333333,2370" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:moio="clr-namespace:Microsoft.Office.Interop.Outlook;assembly=Microsoft.Office.Interop.Outlook" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="40">
+    <scg:List x:TypeArguments="x:String" Capacity="46">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -41,10 +41,16 @@
       <x:String>System.ComponentModel</x:String>
       <x:String>System.Xml.Serialization</x:String>
       <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.Vision.OCR</x:String>
+      <x:String>UiPath.OCR.Contracts</x:String>
+      <x:String>UiPath.OCR.Activities</x:String>
+      <x:String>UiPath.OCR.Contracts.Activities</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="34">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="36">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -72,16 +78,18 @@
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Platform</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="715.333333333333,2477.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_4">
+  <Sequence sap:VirtualizedContainerService.HintSize="715.333333333333,2305.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_4">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(snm:MailMessage)" Name="Outlookmail" />
       <Variable x:TypeArguments="moio:Application" Default="[new Microsoft.Office.Interop.Outlook.ApplicationClass]" Name="oapp" />
@@ -94,33 +102,33 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:GetOutlookMailMessages Account="{x:Null}" Filter="{x:Null}" FilterByMessageIds="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Get Outlook Mail Messages" GetAttachements="False" sap:VirtualizedContainerService.HintSize="673.333333333333,22" sap2010:WorkflowViewState.IdRef="GetOutlookMailMessages_1" MailFolder="Fortinet Channel" MarkAsRead="False" Messages="[Outlookmail]" OnlyUnreadMessages="True" OrderByDate="NewestFirst" Top="50" />
-    <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="673.333333333333,1542.66666666667" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[Outlookmail]">
+    <ui:GetOutlookMailMessages Account="{x:Null}" Filter="{x:Null}" FilterByMessageIds="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Get Outlook Mail Messages" GetAttachements="False" sap:VirtualizedContainerService.HintSize="673.333333333333,22" sap2010:WorkflowViewState.IdRef="GetOutlookMailMessages_1" MailFolder="Junk Email" MarkAsRead="False" Messages="[Outlookmail]" OnlyUnreadMessages="True" OrderByDate="NewestFirst" Top="50" />
+    <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="673.333333333333,1544" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[Outlookmail]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="snm:MailMessage">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="snm:MailMessage" Name="item" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="636.666666666667,1415.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="636.666666666667,1416.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[item.body.Contains(&quot;Ashik Bin Kader&quot;)]" sap:VirtualizedContainerService.HintSize="594.666666666667,1323.33333333333" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[item.body.Contains(&quot;Ashik Bin Kader&quot;)]" sap:VirtualizedContainerService.HintSize="594.666666666667,1324.66666666667" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="558,1130.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+                <Sequence sap:VirtualizedContainerService.HintSize="558,1132" sap2010:WorkflowViewState.IdRef="Sequence_1">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="516,1038.66666666667" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                  <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="516,1040" sap2010:WorkflowViewState.IdRef="TryCatch_1">
                     <TryCatch.Try>
-                      <ui:MoveOutlookMessage Account="{x:Null}" DisplayName="Move Outlook Mail Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="MoveOutlookMessage_1" MailFolder="BD tender" MailMessage="[item]" />
+                      <ui:MoveOutlookMessage Account="{x:Null}" DisplayName="Move Outlook Mail Message" sap:VirtualizedContainerService.HintSize="334,93.3333333333333" sap2010:WorkflowViewState.IdRef="MoveOutlookMessage_1" MailFolder="BD tender" MailMessage="[item]" />
                     </TryCatch.Try>
                     <TryCatch.Catches>
-                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="482,869.333333333333" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="482,870.666666666667" sap2010:WorkflowViewState.IdRef="Catch`1_1">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -131,14 +139,14 @@
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                           </ActivityAction.Argument>
-                          <Sequence DisplayName="Check Folders" sap:VirtualizedContainerService.HintSize="476,799.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                          <Sequence DisplayName="Check Folders" sap:VirtualizedContainerService.HintSize="476,800.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_6">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <Assign sap:VirtualizedContainerService.HintSize="434,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
+                            <Assign sap:VirtualizedContainerService.HintSize="434,62" sap2010:WorkflowViewState.IdRef="Assign_1">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="moio:Folders">[oFolders]</OutArgument>
                               </Assign.To>
@@ -146,7 +154,7 @@
                                 <InArgument x:TypeArguments="moio:Folders">[oapp.Session.DefaultStore.GetRootFolder().Folders]</InArgument>
                               </Assign.Value>
                             </Assign>
-                            <ui:ForEach x:TypeArguments="moio:Folder" CurrentIndex="{x:Null}" DisplayName="For each" sap:VirtualizedContainerService.HintSize="434,280.666666666667" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[oFolders]">
+                            <ui:ForEach x:TypeArguments="moio:Folder" CurrentIndex="{x:Null}" DisplayName="For each" sap:VirtualizedContainerService.HintSize="434,281.333333333333" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[oFolders]">
                               <ui:ForEach.Body>
                                 <ActivityAction x:TypeArguments="moio:Folder">
                                   <ActivityAction.Argument>
@@ -207,43 +215,45 @@
         </ActivityAction>
       </ui:ForEach.Body>
     </ui:ForEach>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: BD tender - tanzin@technometrics.net - Outlook" sap:VirtualizedContainerService.HintSize="673.333333333333,740.666666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="fb4de544-55d6-45a8-ba07-1727634d2680" Version="V1">
-      <uix:NApplicationCard.Body>
-        <ActivityAction x:TypeArguments="x:Object">
-          <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
-          </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,448" sap2010:WorkflowViewState.IdRef="Sequence_8">
-            <Sequence.Variables>
-              <Variable x:TypeArguments="x:String" Name="extractedText" />
-            </Sequence.Variables>
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <uix:NClick ClickType="Single" DisplayName="Click 'BD tender:'" sap:VirtualizedContainerService.HintSize="334,157.333333333333" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="fb4de544-55d6-45a8-ba07-1727634d2680" Version="V1">
-              <uix:NClick.Target>
-                <uix:TargetAnchorable DesignTimeRectangle="19, 672, 305, 36" FriendlyName="'BD tender:'" FullSelectorArgument="&lt;uia cls='NetUITreeView' name='Mail Folders' /&gt;&lt;uia cls='NetUIWBTreeDisplayNode' name='BD tender: 2 unread messages' /&gt;" FuzzySelectorArgument="&lt;uia cls='NetUITreeView' name='Mail Folders' /&gt;&lt;uia cls='NetUIWBTreeDisplayNode' name='BD tender: 2 unread messages' role='Tree Item' automationid='' check:fulltext='BD tender: 2 unread messages' /&gt;" Guid="9f9c139e-66a3-417c-b231-15cfaa1a6ba7" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAATUAAAAoCAYAAACfIG31AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAOlSURBVHhe7dsxb9NAGMZxPgpTJday0pl+gE4snZgIA1M2pMzZ2wmpEowdQECRuqBKVSUWFAYWtn6IdDV6Ir3W0+s5TppQ28d/+Cmt7/WdO/jRe4776ObmpgKAUhBqAIpSh9r19TUADBahBqAohBqAohBqAIpCqAEoCqEGoCiEGoCiEGoAikKoASgKodaBg4ODamdnZyE3DuD+6lCbz+eV5Iq2bTKZ1De129vbq0ajUXVxcbFS/e7ubnV4eFgdHR3dqu+7rkLty+Xv6sX0e/X0zdfq8cuPC8/G36rJ+x/ZemCIIst6EWpBYeXB1lYvCorZbHZrnZTGFYAKToVhruYhdBVqz9+e12GWen18mT0HGJrOQ+309HRxTCGmTi2OT6fTpfURUArAGGsLKp0btQqWXM1D6CrU1KWpK7ua/Vn8fvzpZx1qT159vlMPDFFvQk3G43F93LeUTfVydnZWj4l+93H3v4dajndvEXbAkPUm1PQZXdf+/n5rvdN2Msa9w3MeJM7DTXOr24sxXUc6n8+jAPV6XUe6BT45OVnMo3H9fQruplBbd33NHd2t16xDz9Qi1HLjwNB0Hmop3dRpMLSFmo/r53Rc2kJNAZEbFwVRbh7fLgdfX91mOp6K2vus71vvGF+HtqIRaOrYcjXA0PQu1EQ3rgfbNkJNdG7URZiFCAgPVd8OxzEPFXVmOuaB5F1mzKnPuG51XlErae0660dtjK3DA03P0z6c/8rWAUPTeajFza4b07eRERhN9W7TUPPjTWJdDxUPE69N5/ROS2I7mqttkls/ffVlVfrCgEBDqXoTaqKbNI6rc2mrD/4catk7ax4e2wi1OF+8Np0zDdp0jm2svyoPNG05+XIApRl8qHkg6JxlWzGvbQq1tKtK3SfU0jn9WVxbbWqTUBu/u6oDTeGWqwGGrjehlm4/1X211afvqS3r0sRf/1CwRADqM45rPj0ji3M0p38DuWqopQEdr5r43xK121h/FdpqxpaTDg2l6jzUcnRj+/OitnppC7TgISjRsS1bQ2Nx/qqhJv6g3/k1RO2m67fRc7Po0proZdzcucCQ9CrUdLOrW0sfgDfVq9vK1S+jjskf1EeoiTokDw1djzpGf6F3nVATXXuEmK43XcNrN1m/jf/3QBNCDSXoJNQA4F8h1AAUhVADUBRCDUBRCDUARSHUABSFUANQFEINQFEINQBFIdQAFIVQA1AUQg1AUQg1AEW5E2oAUAJCDUBB5tVfXkc0i/SmcWoAAAAASUVORK5CYII=" InformativeScreenshot="a395af636ec09d997b7cff51dfc4272e.png" ScopeSelectorArgument="&lt;wnd app='outlook.exe' cls='rctrl_renwnd32' title='BD tender - tanzin@technometrics.net - Outlook' /&gt;" SearchSteps="Selector, FuzzySelector, Image" />
-              </uix:NClick.Target>
-            </uix:NClick>
-            <uix:NClick ClickType="Single" DisplayName="Click 'Unread'" sap:VirtualizedContainerService.HintSize="334,157.333333333333" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="fb4de544-55d6-45a8-ba07-1727634d2680" Version="V1">
-              <uix:NClick.Target>
-                <uix:TargetAnchorable DesignTimeRectangle="460, 310, 73, 30" ElementType="Text" FriendlyName="'Unread'" FullSelectorArgument="&lt;uia cls='NetUILabel' name='Unread' /&gt;" FuzzySelectorArgument="&lt;uia cls='NetUILabel' name='Unread' role='Text' automationid='' check:fulltext='Unread' /&gt;" Guid="d7126007-21be-49d8-9ec3-5ca3f247dd94" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAE0AAAAiCAYAAAAaq1Q/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAJ8SURBVGhD7ZU9apRRFIazgGwgC3ADWYAbyAayADcQu1SmsjOVnXZWFoJlSm3EQAhEAgGJCBaCEItUKT95Pucd3jneO5k5fBMQzgMXZs499/y89+fbGoq1KdESlGgJSrQEJVqCEi1BiZagREtQoiUo0Ro8eXs9bD39NLz+/GtmWWRBNJxwZtEy7gv6v1OiJSjREpRoCUq0BA8mmq+9vrkb9l5dDduHp6Pt0fPz4cWHnzPPv0T/3eOLZm78Hr+8HOcUq1ffx2+3Y96do7O5P2vfffk981iEmpRXscnX6s+ZXLT9N1/HoikGP5rA3vPHh2Ll47mfnfwYbcTD7r7EjWBno5jz3NgQ1Dl4/30+R834a3MkpNfrTC4ag2YdFUhRQv6IwIhNcTqYb4mj5uIJwpdT60h478lz9/wZ3p8zuWgU0oI5dlXIH1ssHBCgN7dqncB6fDk9QifQ63e0Kb35jVzPFjryQv7ejOPvUm+06uSdwk7jysnwPGysb2Ck1Z/TFK11JZxlorUagZ5oPX/m/C1rDc/P9UYMrSOf3ipsLlr8H9Eaj+8siAY4966Y0PH1qzO1aDS+7DREll0p7C4ScYnfA7F7seAf0bRb8WEWCEXSKOzUot33rkTwbZ0efVB8TrX0etTTsLJo+nogSgyKYBI1fiGnFs3riB8D/vNFdnR63NfrddEUuyWyvvSMlUUDfV0UWIPCsLXevKlFA9VBXr1P2PgfG9aVQjj8GPyWPfqrHvfHhshrX0/BbiiwBlcmnjCxCdGAfDotDJpEuNbVIpY2VmIA/6NonELm8WOedcSVHdvaohV9SrQEJVqCEi1BiZagREtQoiUo0dZmGP4ALLB8eLXi3X4AAAAASUVORK5CYII=" InformativeScreenshot="c38260efb79c1268d91d3cf15b5efe75.png" ScopeSelectorArgument="&lt;wnd app='outlook.exe' cls='rctrl_renwnd32' title='BD tender - tanzin@technometrics.net - Outlook' /&gt;" SearchSteps="Selector, FuzzySelector, Image">
-                  <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
-                      <uix:Target DesignTimeRectangle="448, 310, 97, 41" ElementType="Button" FriendlyName="'Unread'" FullSelectorArgument="&lt;uia cls='NetUIStickyButton' name='Show Unread Emails' /&gt;" FuzzySelectorArgument="&lt;uia cls='NetUIStickyButton' name='Show Unread Emails' role='Button' automationid='' check:fulltext='Unread' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGUAAAAtCAYAAAC3d6XOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAK6SURBVHhe7ZkxihVBEIb3AHsBD+AF9gBewAt4AC+gmdEamWlkppmRgWBouJuIggiKIMiKYCAIGmy04cg3+/6lLLoH9/Us70fqg4Z93TXdNfX19Azs3lTYUVIMKSmGlBRDSoohJcWQkmJISTGkpBhSUlbg9vOTae/u6+npm5+bnjGGpJAEyZDUEmsn7UZJMaSkGFJSDCkphvw3UuK1J7/OpptPPk/7997OfdcfvJ8eHv3YRJ6T4w8efWiuTdyNx5/mMc3Vy+/46+m87rX77y7iufbFx9+biL8hJ62ruVmvdX8j7FzKrWdf5qJws8RRJPp78cRQDMXEtQ9ffZ/7mI/+GMu8GfrZCIzFtelDWOTOy28XY+RMvORLVMx3hJ1LoVHMiArATQvFU2RaLhq7m/FW8VW8/AQQy1MXkdh4T3HtXjwt3t8IO5fCjbZgjF0pFE9fLgxQ4N7Yv+YJXE8su1/oCYr5RyS9N35ZLI6vFjoShOJjsSLxvdBrrTx5T9BPYbUmLa7DxokbJNO6vxFWkdI6MiJLUlqFgp6UXjxj8V3SanF9jj+KretYT+8K+qKU/Duja+L8IwxJAZLpHUFCj3c8WtaWQmGXdnNm6cihP0pgXubvgczeXNswLEW7Lb94BSK4qSxubSmXPdeJbe1+fTDEMeXSu0cdnTZS9PVB0XPSCJG0/IW1tpSYR37Z85svuoh2f4yN+UYpmrslUV+KNBspoK8TJa7GjdPXeuesLQWUB+vq/UAfv3NBdeQghjgaf6s/xyufGE8fEu2OL8FuUuJqHCn5CRFXIQVYT7udRhER0zp6mEsbR8UGfmcpPEWME8c41zGv+umzk1KsR0kxpKQYUlIMKSmGlBRDSoohJcWQkmJISTGkpBhSUgwpKYaUFENKiiFbS+H/B9WW27aUlCts21LHlyElxY5p+gOO93m102H3fAAAAABJRU5ErkJggg==" SearchSteps="Selector, FuzzySelector, Image" />
-                    </scg:List>
-                  </uix:TargetAnchorable.Anchors>
-                </uix:TargetAnchorable>
-              </uix:NClick.Target>
-            </uix:NClick>
-          </Sequence>
-        </ActivityAction>
-      </uix:NApplicationCard.Body>
-      <uix:NApplicationCard.TargetApp>
-        <uix:TargetApp Area="-11, -11, 1942, 1042" FilePath="C:\Program Files (x86)\Microsoft Office\root\Office16\outlook.exe" IconBase64="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" InformativeScreenshot="14798641c4f8c2ebb80fe3e9941d92bd.png" Selector="&lt;wnd app='outlook.exe' cls='rctrl_renwnd32' title='BD tender - tanzin@technometrics.net - Outlook'/&gt;" />
-      </uix:NApplicationCard.TargetApp>
-    </uix:NApplicationCard>
+    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="673.333333333333,567.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_8">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="extractedText" />
+        <Variable x:TypeArguments="scg:List(snm:MailMessage)" Name="TenderMail" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:GetOutlookMailMessages Account="{x:Null}" Filter="{x:Null}" FilterByMessageIds="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Get Outlook Mail Messages" GetAttachements="False" sap:VirtualizedContainerService.HintSize="434,22" sap2010:WorkflowViewState.IdRef="GetOutlookMailMessages_2" MailFolder="BD tender" MarkAsRead="False" Messages="[TenderMail]" OnlyUnreadMessages="True" OrderByDate="NewestFirst" Top="30" />
+      <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="434,413.333333333333" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[TenderMail]">
+        <ui:ForEach.Body>
+          <ActivityAction x:TypeArguments="snm:MailMessage">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="snm:MailMessage" Name="item" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,286.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_9">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:String" Name="Mails" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Assign sap:VirtualizedContainerService.HintSize="334,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_3">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[Mails]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[item.body]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93.3333333333333" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[Mails]" />
+            </Sequence>
+          </ActivityAction>
+        </ui:ForEach.Body>
+      </ui:ForEach>
+    </Sequence>
   </Sequence>
 </Activity>
