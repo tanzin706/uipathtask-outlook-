@@ -7568,9 +7568,9 @@
     "restore": {
       "projectUniqueName": "Prototype",
       "projectName": "Prototype",
-      "projectPath": "C:\\Users\\tanzi\\Documents\\UiPath\\Prototype\\.local",
+      "projectPath": "C:\\Users\\tanzi\\Desktop\\Myapp\\.local",
       "packagesPath": "C:\\Users\\tanzi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tanzi\\Documents\\UiPath\\Prototype\\.local"
+      "outputPath": "C:\\Users\\tanzi\\Desktop\\Myapp\\.local"
     },
     "frameworks": {
       "net461": {
