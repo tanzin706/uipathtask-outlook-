@@ -178,6 +178,21 @@
         "C:\\Users\\tanzi\\.nuget\\packages\\uipath.vision/3.1.4\\lib/net461/UiPath.Vision.dll"
       ],
       "Path": "C:\\Users\\tanzi\\.nuget\\packages\\uipath.uiautomation.activities\\21.10.5"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.Activities",
+        "Version": "1.0.1"
+      },
+      "Assemblies": [
+        "C:\\Users\\tanzi\\.nuget\\packages\\microsoft.activities/1.0.1\\lib/net45/Microsoft.Activities.Design.dll",
+        "C:\\Users\\tanzi\\.nuget\\packages\\microsoft.activities/1.0.1\\lib/net45/Microsoft.Activities.Design.Services.dll",
+        "C:\\Users\\tanzi\\.nuget\\packages\\microsoft.activities/1.0.1\\lib/net45/Microsoft.Activities.dll",
+        "C:\\Users\\tanzi\\.nuget\\packages\\microsoft.activities/1.0.1\\lib/net45/Microsoft.Workflow.Client.dll",
+        "C:\\Users\\tanzi\\.nuget\\packages\\microsoft.activities/1.0.1\\lib/net45/Microsoft.Workflow.Common.dll",
+        "C:\\Users\\tanzi\\.nuget\\packages\\microsoft.activities/1.0.1\\lib/net45/Microsoft.Workflow.Tracing.dll"
+      ],
+      "Path": "C:\\Users\\tanzi\\.nuget\\packages\\microsoft.activities\\1.0.1"
     }
   ],
   "Conflicts": [],
@@ -300,6 +315,11 @@
           "Item2": "[2.10.0, )"
         }
       ]
+    },
+    "Microsoft.Activities": {
+      "Id": "Microsoft.Activities",
+      "Version": "1.0.1",
+      "Dependencies": []
     },
     "Microsoft.AspNet.SignalR.Client": {
       "Id": "Microsoft.AspNet.SignalR.Client",
@@ -1450,6 +1470,21 @@
         "C:\\Users\\tanzi\\.nuget\\packages\\mailkit\\2.10.0\\lib\\net46\\MailKit.dll"
       ],
       "Path": "C:\\Users\\tanzi\\.nuget\\packages\\mailkit\\2.10.0"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.Activities",
+        "Version": "1.0.1"
+      },
+      "Assemblies": [
+        "C:\\Users\\tanzi\\.nuget\\packages\\microsoft.activities\\1.0.1\\lib\\net45\\Microsoft.Activities.Design.dll",
+        "C:\\Users\\tanzi\\.nuget\\packages\\microsoft.activities\\1.0.1\\lib\\net45\\Microsoft.Activities.Design.Services.dll",
+        "C:\\Users\\tanzi\\.nuget\\packages\\microsoft.activities\\1.0.1\\lib\\net45\\Microsoft.Activities.dll",
+        "C:\\Users\\tanzi\\.nuget\\packages\\microsoft.activities\\1.0.1\\lib\\net45\\Microsoft.Workflow.Client.dll",
+        "C:\\Users\\tanzi\\.nuget\\packages\\microsoft.activities\\1.0.1\\lib\\net45\\Microsoft.Workflow.Common.dll",
+        "C:\\Users\\tanzi\\.nuget\\packages\\microsoft.activities\\1.0.1\\lib\\net45\\Microsoft.Workflow.Tracing.dll"
+      ],
+      "Path": "C:\\Users\\tanzi\\.nuget\\packages\\microsoft.activities\\1.0.1"
     },
     {
       "Package": {

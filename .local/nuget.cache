@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "CWdz1TzuGfkQ1wtRkKCG9wLYQhRivDJXuRzD6URnC0w79HExmf4HolBtZfFsvG9cOripR7PvNP7fImVWg4pxqQ==",
+  "dgSpecHash": "9lDH0R0I2sCN+//Qy37t2O24CUSYrxxfeS1q+GcrQTZ5CRPPATYlwKB4PiKoFWIMX2SNB4ksFKtJJ+7jHW+C6w==",
   "success": true,
   "projectFilePath": "C:\\Users\\tanzi\\Desktop\\Myapp\\.local\\",
   "expectedPackageFiles": [
@@ -14,6 +14,7 @@
     "C:\\Users\\tanzi\\.nuget\\packages\\google.apis.gmail.v1\\1.43.0.1859\\google.apis.gmail.v1.1.43.0.1859.nupkg.sha512",
     "C:\\Users\\tanzi\\.nuget\\packages\\google.apis.peopleservice.v1\\1.43.0.1876\\google.apis.peopleservice.v1.1.43.0.1876.nupkg.sha512",
     "C:\\Users\\tanzi\\.nuget\\packages\\mailkit\\2.10.0\\mailkit.2.10.0.nupkg.sha512",
+    "C:\\Users\\tanzi\\.nuget\\packages\\microsoft.activities\\1.0.1\\microsoft.activities.1.0.1.nupkg.sha512",
     "C:\\Users\\tanzi\\.nuget\\packages\\microsoft.aspnet.signalr.client\\2.4.0\\microsoft.aspnet.signalr.client.2.4.0.nupkg.sha512",
     "C:\\Users\\tanzi\\.nuget\\packages\\microsoft.aspnetcore.connections.abstractions\\3.1.6\\microsoft.aspnetcore.connections.abstractions.3.1.6.nupkg.sha512",
     "C:\\Users\\tanzi\\.nuget\\packages\\microsoft.aspnetcore.http.connections.client\\3.1.6\\microsoft.aspnetcore.http.connections.client.3.1.6.nupkg.sha512",

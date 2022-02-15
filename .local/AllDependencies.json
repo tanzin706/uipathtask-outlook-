@@ -142,6 +142,20 @@
           "lib/net46/MailKit.dll": {}
         }
       },
+      "Microsoft.Activities/1.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Activities.Design.Services.dll": {},
+          "lib/net45/Microsoft.Activities.Design.dll": {},
+          "lib/net45/Microsoft.Activities.dll": {},
+          "lib/net45/Microsoft.Workflow.Client.dll": {},
+          "lib/net45/Microsoft.Workflow.Common.dll": {},
+          "lib/net45/Microsoft.Workflow.Tracing.dll": {}
+        }
+      },
       "Microsoft.AspNet.SignalR.Client/2.4.0": {
         "type": "package",
         "dependencies": {
@@ -2170,6 +2184,20 @@
         },
         "runtime": {
           "lib/net46/MailKit.dll": {}
+        }
+      },
+      "Microsoft.Activities/1.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Activities.Design.Services.dll": {},
+          "lib/net45/Microsoft.Activities.Design.dll": {},
+          "lib/net45/Microsoft.Activities.dll": {},
+          "lib/net45/Microsoft.Workflow.Client.dll": {},
+          "lib/net45/Microsoft.Workflow.Common.dll": {},
+          "lib/net45/Microsoft.Workflow.Tracing.dll": {}
         }
       },
       "Microsoft.AspNet.SignalR.Client/2.4.0": {
@@ -4267,6 +4295,25 @@
         "lib/netstandard2.0/MailKit.xml",
         "mailkit.2.10.0.nupkg.sha512",
         "mailkit.nuspec"
+      ]
+    },
+    "Microsoft.Activities/1.0.1": {
+      "sha512": "jkwJR/MMdyLol9wkIXkbpcCu8AUAJte7UZM6IcoeOnrX8cNgHppt6IawNfkhGqQs6ulTklBuZ2DjLj1/154iUA==",
+      "type": "package",
+      "path": "microsoft.activities/1.0.1",
+      "files": [
+        ".nupkg.metadata",
+        "lib/net45/Microsoft.Activities.Design.Services.dll",
+        "lib/net45/Microsoft.Activities.Design.dll",
+        "lib/net45/Microsoft.Activities.Design.xml",
+        "lib/net45/Microsoft.Activities.dll",
+        "lib/net45/Microsoft.Activities.xml",
+        "lib/net45/Microsoft.Workflow.Client.dll",
+        "lib/net45/Microsoft.Workflow.Client.xml",
+        "lib/net45/Microsoft.Workflow.Common.dll",
+        "lib/net45/Microsoft.Workflow.Tracing.dll",
+        "microsoft.activities.1.0.1.nupkg.sha512",
+        "microsoft.activities.nuspec"
       ]
     },
     "Microsoft.AspNet.SignalR.Client/2.4.0": {
@@ -7555,6 +7602,7 @@
   "projectFileDependencyGroups": {
     "": [],
     ".NETFramework,Version=v4.6.1": [
+      "Microsoft.Activities >= 1.0.1 <= 1.0.1",
       "UiPath.Excel.Activities >= 2.11.4 <= 2.11.4",
       "UiPath.Mail.Activities >= 1.12.3 <= 1.12.3",
       "UiPath.System.Activities >= 21.10.4 <= 21.10.4",
@@ -7575,6 +7623,11 @@
     "frameworks": {
       "net461": {
         "dependencies": {
+          "Microsoft.Activities": {
+            "include": "Runtime",
+            "target": "Package",
+            "version": "[1.0.1, 1.0.1]"
+          },
           "UiPath.Excel.Activities": {
             "include": "Runtime",
             "target": "Package",
